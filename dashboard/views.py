@@ -23,7 +23,7 @@ def server_account_create(request: HttpRequest):
 
 
 def create_linux_user(username, password):
-    subprocess.run(['sudo', 'adduser', username, '--gecos', '""', '--disabled-password'])
+    subprocess.run(['sudo', 'useradd', '-m', '-s', '/bin/bash', username])
     subprocess.run(['sudo', 'chpasswd'], input=f'{username}:{password}'.encode())
 
 
