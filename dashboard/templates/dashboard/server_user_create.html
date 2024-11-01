@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Playfull Web - Создание аккаунта на сервере</title>
+</head>
+<body>
+  <header>
+    <a href="/dashboard">Назад</a>
+  </header>
+
+  <div>
+    <form action="/server/account/create" method="POST">
+      {% csrf_token %}
+      <div class="form_items">
+        <div class="form_item">
+          <label for="name">Название сервера</label>
+          <input type="text" id="name" name="name">
+        </div>
+
+        <div class="form_item">
+          <label for="pass1">Пароль</label>
+          <input type="text" id="pass1" name="pass1">
+        </div>
+      </div>
+
+      <button type="submit">Создать</button>
+    </form>
+  </div>
+</body>
+</html>
